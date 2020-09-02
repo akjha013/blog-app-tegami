@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+             
+     <!-- <link rel="stylesheet" href="../public/styles/index.css"> -->
+    <title>Posts</title>
+    <style>
+        img{
+        /* width: fit-content;
+        max-height: 200px; */
+        max-height: 400px;
+        width: auto;
+
+        object-fit:cover;
+  object-position: 50% 50%; 
+      }
+        
+
+    </style>
+</head>
+<body>
+    <%- include('partials/navimanu.ejs'); %>
+    <div class="container z-depth-1 indigo lighten-5">
+        <div class="section">
+            <div>
+                <h1 class="blue-text">
+                    Hello 
+                    <% if(typeof user != 'undefined') {%>
+                        <%= user.name %>
+                    <%} %>
+                </h1>
+                <div class="divider">
+                 
+                </div>
+               
+                             
+            </div>   
+             
+            <% if(typeof posts !='undefined'){ %>  
+            <div>
+                <%- include("partials/posts_all"); -%>
+            </div>
+            <% }else{ %>
+                <div class="center">
+                    <h5 class="red-text">No posts yet</h5>
+                </div>
+                <% } %>
+        </div>
+        
+    </div>
+</body>
+</html>

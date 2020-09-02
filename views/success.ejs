@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <title>Successfully Signed In</title>
+</head>
+<body>
+    <%- include('partials/navimanu.ejs'); %>
+    <div class="container">
+       
+        <div class="container">
+            <h2 class="blue-text center">
+                Success
+            </h2>
+            <div class="section"></div>
+            <h3 class="center indigo-text">Welcome
+                <%= user.name %>
+            </h3>
+            <h5 class="center indigo-text text-lighten-4">You have successfully signed into your account</h5>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

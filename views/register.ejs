@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <title>Registeration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form container">
+            <h2 class="blue-text center">
+                Register
+            </h2>
+            
+            <% if(typeof err != 'undefined') {%>
+                <h5 class="red-text center"><%= err %></h5>
+            <%} %>
+            <form action="/register" method="POST" col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input name="name" placeholder="Name" id="name" type="text" value="<%= typeof name !='undefined' ? name : '' %>"/>
+                    <label for="name">Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="email" placeholder="Email" id="email" type="email" value=" <%= typeof email != 'undefined' ? email : '' %> ">
+                        <label for="email">Email</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input name="password" placeholder="Password" id="password" type="password"/>
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input name="repassword" placeholder="Re-enter Password" id="password" type="password"/>
+                      <label for="password">Confirm Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class=" center input-field col s12">
+                      <input type="submit" class="btn blue darken-3" value="submit"/>
+                      <h5 class="grey-text">Already have an account? <a href="/login">Sign In</a></h5>
+                    </div>
+                  </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

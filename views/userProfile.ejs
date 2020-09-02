@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+             
+     <!-- <link rel="stylesheet" href="../public/styles/index.css"> -->
+    <title>Profile-</title>
+    <style>
+        .post-view{
+            overflow-x: hidden; 
+                overflow-y:visible;
+                height: 100%; 
+        }
+        ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+        
+        .img-container{
+            padding-top: 50px;
+            
+  
+        }
+      
+        .prof-img{
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            overflow: hidden;
+            
+        }
+        .img-text{
+            font-weight: bolder;
+            font-size: 7em;
+            overflow: hidden;
+            color: aliceblue;
+            text-shadow: 0.5px 0.5px 2px black;
+        }
+        .prof-bod{
+            border-radius: 5px;
+            box-shadow: 2px 2px 8px rgb(192, 189, 189);
+            margin-top: 5%;
+
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navimanu.ejs'); %>
+    <div class="container">
+        <div class="section">
+            <div>
+                <h3 class="blue-text">
+                     
+                    <% if(typeof mangal != 'undefined') {%>
+                        <%= mangal.name %>'s Profile
+                    <%} %>
+                </h3>
+                <div class="divider">
+                </div>
+                          
+            </div>    
+            <div class="row">
+                <div class="col s12 m6 center vcen prof-bod">
+                 
+                   
+                     
+                        <div class=" img-container row center">
+                            <div class="prof-img responsive-img z-depth-1 center indigo lighten-2">
+                                <h1 class="img-text"><%= mangal.name.slice(0,1); %></h1>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <% console.log("user : "+mangal.name); %>
+            
+                            <h4 class="indigo-text flow-text"><%= mangal.name %></h4>
+                        </div>
+                        <div class="row">
+                            <h4 class="indigo-text flow-text"><%= mangal.email %></h4>
+                        </div>
+                                               
+                </div>
+
+                <div class="post-view col s12 m6">
+                    <div class="section"></div>
+                    <%console.log(typeof posts); %>
+                    <% if(typeof posts !='undefined'){ %>  
+                        <div>
+                            <%- include("partials/posts_all"); -%>
+                        </div>
+                        <% } %>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+    <script>
+        $(document).ready(function(){
+            $(".post-view").animate({ 
+                    scrollTop: $( 
+                      '.post-view').get(0).scrollHeight 
+                }, 10000); ;
+        });
+    </script>
+</body>
+</html>

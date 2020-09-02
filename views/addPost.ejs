@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">       
+    <title>add post</title>
+</head>
+<body>
+    <%- include('partials/navimanu.ejs'); %>
+    <div class="container section">
+        <h5 class="center indigo-text">Create New Post</h5>
+        <p class="center indigo-text text-lighten-4">Post something for others to see</p>
+       
+        <div class="section"></div>
+        <div class="section postCon z-depth-2">
+               <form action="addPost" method="POST" enctype="multipart/form-data" onSubmit="alert('Post Added')">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input name="postTitle" placeholder="Title" id="postTitle" type="text"  required/>
+                      <label for="postTitle">Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                      <div class="input-field col s12">
+                          <textarea id="postContent" class="materialize-textarea" name="postContent" placeholder="Content" required></textarea>
+                          <label for="postContent">Content</label>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="file-field input-field col s12">
+                        <div class="btn white">
+                          <span><i class="material-icons grey-text">image</i></span>
+                          <input name="myImage" type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" required/>
+                        </div>
+                      </div>
+                </div>
+                   
+                <div class="row">
+                    <div class=" center input-field col s12 white-text text-darken-4">
+                      <input type="submit" class="btn purple lighten-2" value="Post"/>  
+                    </div>
+                </div>
+
+               
+               </form>
+        </div>
+
+        <!-- <div class="container section">
+            <% if(typeof post != 'undefined') {%>
+                <%= posts.forEach(function(post,index){ postTitle}) %>
+                
+            <%}else{ %>
+                <h5 class="center red-text text-lighten-4">No posts to show</h5>
+                <%} %>
+        </div> -->
+    </div>
+</body>
+</html>

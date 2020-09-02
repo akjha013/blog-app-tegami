@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#comments").click(function(){
+    $("#bong").toggle(500);
+  });
+});
+</script>
+    <title>Post</title>
+    <style>
+      img{
+        /* width: fit-content;
+        max-height: 200px; */
+        max-height: 400px;
+        width: auto;
+
+        object-fit: none;
+  object-position: 50% 50%; 
+      }
+      
+
+    </style>
+</head>
+<body>
+     <%- include('partials/navimanu.ejs'); %>
+    <% posts.forEach((post)=>{ %>
+      <div class="container">  
+      <div class="section">
+           
+        </div>
+        <div class="section">
+         
+            <div class="row">
+                <div class="col s12" >
+                 
+                  <div class="card z-depth-1">
+                   
+                    <div class="card-content">
+                      <span class="card-title"><h6 class="blue-text text-darken-5"><a href="../userProfile/<%=post.user%>"><%=post.author %></a></h6> on <%=post.postDate %> wrote:</span>
+                      <div class="divider" ></div>
+                      <div class="img-con">
+                        <div class="card-image">
+                          
+                        <img class="post-img responsive-img" src="/uploads/<%=post.postImage%>" alt="post-image" >
+                        <h1 class="text-darken-5"><%=post.postTitle %></h1>
+                      </div>
+                        <p style="white-space:pre-line"><%=post.postContent  %></p>
+                   
+                      </div>
+                       
+                    </div> 
+                    <div class="card-action">
+                      <a id="comments" href="#">comments</a>
+                        <div id="bong" style="background: rgb(240, 239, 239); display: none;">
+                            <div>
+                                <form action="/" method="POST" col s12">
+                                    <div class="row">
+                                        <div class="col s12"> <h5><%=user.name%></h5></div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="input-field col s12">
+                                        <input name="comment" placeholder="comment" id="comment" type="text" value=""/>
+                                        <label for="name">comment</label>
+                                      </div>
+                                    </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                 
+                  </div>
+          
+                </div>
+              </div>
+           
+        </div>
+    </div>
+        <%}) %>
+    
+</body>
+</html>
