@@ -5,9 +5,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-             
+        
     <!-- <link rel="stylesheet" href="../public/styles/index.css"> -->
     <title>Home</title>
     <style>
@@ -27,7 +25,7 @@
 body{
   /* The image used */
   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba(0,212,255,1) 100%);
+background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(228, 241, 245) 31%, rgb(103, 95, 241) 100%);
 
 
 
@@ -39,7 +37,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba(
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+h5>a:hover{
+    scale: 2,2;
+}
     </style>
 </head>
 <body>
@@ -52,17 +52,17 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba(
                         <%= user.name %>
                     <%} %>
                 </h1>
-                <div class="divider">
+                <div class="divider indigo">
                  
                 </div>
                 <% if(typeof user == 'undefined') {%>
-                   <p class="blue-text text-lighten-3">
+                   <p class="indigo-text " style="letter-spacing: 0.5em;">
                      Please select an action 
                     </p>
                     
                     <div class="row">
-                        <div class="col s4"><h5><a class="red-text" href="/register">SignUp</a></h5></div>
-                        <div class="col s4"><h5><a class="green-text" href="/login">SignIn</a></h5></div>
+                        <div class="col s4"><h5><a class="choice red-text" href="/register">SignUp</a></h5></div>
+                        <div class="col s4"><h5><a class="choice green-text" href="/login">SignIn</a></h5></div>
                     </div> %>
                 <%}%>                     
             </div>   
@@ -70,5 +70,16 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba(
         </div>
         
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous">
+      </script>
+  
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+
 </body>
 </html>
